@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)file:///D:/swich%20game/gemini-code-1777538745619.html -->
+<html lang="th"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>คลังอุปกรณ์ทางกายภาพบำบัด - ระบบยืม-คืนอุปกรณ์</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+</head><body><svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-bed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 20v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4"></path>
+    <path d="M2 14V9a2 2 0 0 1 2-2h4v7H2z"></path>
+    <path d="M10 7h8a2 2 0 0 1 2 2v5H10V7z"></path>
+    <line x1="2" y1="20" x2="22" y2="20"></line>
+  </symbol>
+  <symbol id="i-wc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="4" r="2"></circle>
+    <path d="M6 21l1-7H4l2.5-6h5L14 14h-3l1 7"></path>
+    <circle cx="18" cy="17" r="3"></circle>
+    <line x1="18" y1="14" x2="18" y2="11"></line>
+    <line x1="15" y1="17" x2="21" y2="17"></line>
+  </symbol>
+  <symbol id="i-crutch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="8" y1="3" x2="16" y2="3"></line>
+    <line x1="12" y1="3" x2="12" y2="9"></line>
+    <line x1="8" y1="9" x2="16" y2="9"></line>
+    <line x1="10" y1="9" x2="8" y2="21"></line>
+    <line x1="14" y1="9" x2="16" y2="21"></line>
+  </symbol>
+  <symbol id="i-w4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="4" r="1.5" fill="currentColor" stroke="none"></circle>
+    <line x1="12" y1="5.5" x2="12" y2="14"></line>
+    <rect x="7" y="14" width="10" height="2" rx="1"></rect>
+    <line x1="8" y1="16" x2="6" y2="22"></line>
+    <line x1="10.5" y1="16" x2="9.5" y2="22"></line>
+    <line x1="13.5" y1="16" x2="14.5" y2="22"></line>
+    <line x1="16" y1="16" x2="18" y2="22"></line>
+  </symbol>
+  <symbol id="i-w3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="4" r="1.5" fill="currentColor" stroke="none"></circle>
+    <line x1="12" y1="5.5" x2="12" y2="14"></line>
+    <path d="M7 14 Q12 12.5 17 14"></path>
+    <line x1="7" y1="14" x2="5" y2="22"></line>
+    <line x1="12" y1="14" x2="12" y2="22"></line>
+    <line x1="17" y1="14" x2="19" y2="22"></line>
+  </symbol>
+  <symbol id="i-c1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="4.5" r="1.8" fill="currentColor" stroke="none"></circle>
+    <path d="M9 6.3 Q7 7 7 9 Q7 11 10 11.5 L13 21"></path>
+  </symbol>
+  <symbol id="i-default" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="6" width="18" height="13" rx="2"></rect>
+    <line x1="8" y1="6" x2="8" y2="19"></line>
+    <line x1="16" y1="6" x2="16" y2="19"></line>
+  </symbol>
+  <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"></polyline>
+  </symbol>
+  <symbol id="i-loop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="17 1 21 5 17 9"></polyline>
+    <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+    <polyline points="7 23 3 19 7 15"></polyline>
+    <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+  </symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+    <polyline points="14 2 14 8 20 8"></polyline>
+  </symbol>
+</svg>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans Thai',sans-serif;background:#F0F7F1;color:#0D3B1A;min-height:100vh}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#F0F7F1}::-webkit-scrollbar-thumb{background:#C9DFCA;border-radius:3px}
+
+.header{background:#FFFFFF;border-bottom:2px solid #2F855A;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.header-left{display:flex;align-items:center;gap:14px}
+.header-btns{display:flex;gap:8px;flex-wrap:wrap}
+
+.stats-bar{display:flex;gap:14px;padding:18px 28px;overflow-x:auto}
+.stat-card{background:#FFFFFF;border:1px solid #C9DFCA;border-radius:16px;padding:16px 20px;flex:1 0 140px;min-width:140px}
+.stat-icon{width:26px;height:26px;margin-bottom:6px}
+.stat-icon svg{width:26px;height:26px}
+.stat-val{font-size:30px;font-weight:800;margin-bottom:2px}
+.stat-label{font-size:12px;color:#2F855A}
+
+.tabs{padding:0 28px;display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.content{padding:0 28px 32px}
+
+.card{background:#FFFFFF;border:1px solid #C9DFCA;border-radius:16px}
+.eq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.eq-card{background:#FFFFFF;border:1px solid #C9DFCA;border-radius:16px;padding:22px;animation:fadeIn 0.35s ease}
+.eq-icon-box{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.eq-icon-box svg{width:28px;height:28px}
+.eq-hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.eq-num{font-size:36px;font-weight:800}
+.eq-sub{font-size:12px;color:#2F855A}
+.prog-bg{background:#F0F7F1;border-radius:8px;height:8px;margin-bottom:10px}
+.prog-fill{height:100%;border-radius:8px;transition:width .5s ease}
+.eq-foot{display:flex;justify-content:space-between;font-size:12px;color:#2F855A}
+.warn-tag{margin-top:8px;font-size:12px;font-weight:600}
+
+.btn{border:none;padding:9px 16px;border-radius:10px;cursor:pointer;font-weight:600;font-family:'Noto Sans Thai',sans-serif;font-size:13px;transition:all .2s;display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.btn-primary{background:linear-gradient(135deg,#2F855A,#4CAF50);color:#fff}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(47,133,90,.35)}
+.btn-success{background:linear-gradient(135deg,#2F855A,#1F5F40);color:#fff;padding:7px 13px;font-size:12px}
+.btn-outline{background:transparent;color:#2F855A;border:1px solid #C9DFCA;padding:8px 14px}
+.btn-outline:hover{background:#E8F5E9;color:#0D3B1A}
+.btn-sm{padding:6px 12px;font-size:12px;border-radius:8px}
+.tab{padding:9px 18px;border-radius:10px;cursor:pointer;font-weight:600;font-size:13px;border:none;font-family:'Noto Sans Thai',sans-serif;transition:all .2s}
+.tab-on{background:linear-gradient(135deg,#2F855A,#4CAF50);color:#fff}
+.tab-off{background:transparent;color:#2F855A}
+.tab-off:hover{color:#0D3B1A}
+
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{padding:11px 14px;text-align:left;color:#2F855A;font-weight:600;font-size:11px;background:#F0F7F1}
+td{padding:11px 14px;border-top:1px solid #C9DFCA;vertical-align:middle}
+tr:nth-child(even) td{background:#F7FCF8}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.badge-b{background:rgba(237,137,54,.18);color:#ED8936}
+.badge-r{background:rgba(56,161,105,.18);color:#2F855A}
+
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:1000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+.overlay.show{display:flex}
+.modal{background:#FFFFFF;border:1px solid #C9DFCA;border-radius:20px;padding:28px;width:480px;max-width:95vw;max-height:90vh;overflow-y:auto;animation:fadeIn .25s ease}
+.modal h2{margin-bottom:20px;font-weight:700;font-size:18px;color:#0D3B1A}
+.fgrp{margin-bottom:14px}
+.fgrp label{display:block;font-size:11px;color:#2F855A;margin-bottom:5px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.inp{background:#F0F7F1;border:1px solid #C9DFCA;color:#0D3B1A;padding:9px 13px;border-radius:10px;width:100%;font-size:13px;font-family:'Noto Sans Thai',sans-serif;outline:none;transition:border .2s}
+.inp:focus{border-color:#2F855A}
+select.inp option{background:#FFFFFF}
+.mfoot{display:flex;gap:10px;margin-top:22px;justify-content:flex-end}
+.qty-row{display:flex;gap:10px;align-items:center}
+.qty-num{font-size:24px;font-weight:800;min-width:40px;text-align:center;color:#0D3B1A}
+.info-box{background:#F0F7F1;border-radius:12px;padding:14px;margin-bottom:14px}
+.info-lbl{font-size:11px;color:#2F855A;margin-bottom:2px;font-weight:600;text-transform:uppercase}
+.info-val{font-weight:700;font-size:15px;margin-bottom:8px;color:#0D3B1A}
+
+.toast{position:fixed;top:18px;right:18px;z-index:9999;padding:12px 18px;border-radius:12px;font-weight:600;box-shadow:0 8px 32px rgba(0,0,0,.3);display:none;animation:slideIn .3s ease;font-size:13px}
+.toast.show{display:block}
+.t-ok{background:#2F855A;color:#fff}
+.t-err{background:#E24B4A;color:#fff}
+
+.fbar{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;align-items:center}
+.code-blk{background:#F0F7F1;border-radius:12px;padding:14px;font-size:11px;font-family:monospace;white-space:pre-wrap;max-height:360px;overflow:auto;line-height:1.7;color:#1D9E75;border:1px solid #C9DFCA}
+.step{padding:5px 0;font-size:12px;color:#2F855A}
+
+.ipick-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-top:6px}
+.ipick-btn{background:#F0F7F1;border:2px solid #C9DFCA;border-radius:10px;padding:8px 4px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;transition:all .15s}
+.ipick-btn:hover{border-color:#4CAF5080}
+.ipick-btn.sel{border-color:#2F855A;background:#E8F5E9}
+.ipick-btn svg{width:24px;height:24px}
+.ipick-lbl{font-size:9px;color:#2F855A;font-family:'Noto Sans Thai',sans-serif;text-align:center}
+
+.cdot{width:26px;height:26px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .15s;flex-shrink:0}
+.cdot:hover{transform:scale(1.12)}
+.cdot.sel{border-color:#fff;box-shadow:0 0 0 2px #2F855A}
+
+.e-edit{background:transparent;border:1px solid #C9DFCA;border-radius:8px;padding:5px 10px;cursor:pointer;font-size:12px;color:#2F855A;transition:all .2s;font-family:'Noto Sans Thai',sans-serif}
+.e-edit:hover{background:#E8F5E9;color:#0D3B1A}
+.e-del{background:transparent;border:1px solid #C9DFCA;border-radius:8px;padding:5px 10px;cursor:pointer;font-size:12px;color:#2F855A;transition:all .2s;font-family:'Noto Sans Thai',sans-serif;margin-left:4px}
+.e-del:hover{background:rgba(226,75,74,.1);border-color:#E24B4A;color:#E24B4A}
+
+.irow{display:flex;align-items:center;gap:8px}
+.irow svg{width:18px;height:18px;flex-shrink:0}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideIn{from{transform:translateX(80px);opacity:0}to{transform:translateX(0);opacity:1}}
+.hidden{display:none}
+.numgrid{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.nchip{min-width:42px;height:36px;border-radius:8px;border:2px solid #C9DFCA;background:#F0F7F1;color:#0D3B1A;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit}
+.nchip:hover{border-color:#4CAF50}
+.nchip.sel{background:#2F855A;border-color:#2F855A;color:#fff}
+.nchip.busy{background:#FDEBD3;border-color:#ED8936;color:#B7691B;cursor:not-allowed;text-decoration:line-through}
+.dchip{display:inline-block;min-width:26px;padding:3px 6px;border-radius:6px;font-size:11px;font-weight:700;text-align:center;margin:2px;background:#E8F5E9;color:#2F855A}
+.dchip.busy{background:#ED8936;color:#fff}
+.ntag{display:inline-block;background:#E8F5E9;color:#1F5F40;border-radius:6px;padding:1px 7px;margin:1px;font-size:11px;font-weight:700}
+.hint{font-size:12px;color:#2F855A;margin-top:6px}
+
+/* ===== Glass design layer ===== */
+:root{
+  --g-fill:rgba(255,255,255,.42);
+  --g-fill-strong:rgba(255,255,255,.62);
+  --g-edge:rgba(255,255,255,.7);
+  --g-shadow:0 8px 32px rgba(31,95,64,.14);
+  --g-blur:blur(18px) saturate(165%);
+}
+html{background:#DCEFE3}
+body{
+  background:
+    radial-gradient(60vmax 60vmax at 8% -10%,#B7E4C7 0%,transparent 60%),
+    radial-gradient(50vmax 50vmax at 100% 5%,#BFE3F0 0%,transparent 55%),
+    radial-gradient(55vmax 55vmax at 70% 110%,#D8E9B8 0%,transparent 60%),
+    linear-gradient(160deg,#EAF6EE,#D5ECDD);
+  background-attachment:fixed;
+  position:relative;
+}
+body::before,body::after{
+  content:"";position:fixed;z-index:-1;border-radius:50%;filter:blur(70px);pointer-events:none;
+}
+body::before{width:420px;height:420px;left:-120px;top:30vh;background:rgba(76,175,80,.30)}
+body::after{width:380px;height:380px;right:-100px;bottom:-60px;background:rgba(47,133,90,.26)}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(47,133,90,.35)}
+
+/* surfaces */
+.header,.stat-card,.card,.eq-card,.modal,.info-box,.code-blk{
+  -webkit-backdrop-filter:var(--g-blur);backdrop-filter:var(--g-blur);
+}
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.5);
+  border-bottom:1px solid var(--g-edge);
+  box-shadow:0 4px 24px rgba(31,95,64,.10),inset 0 -1px 0 rgba(255,255,255,.5);
+}
+.stat-card,.card,.eq-card{
+  background:linear-gradient(145deg,rgba(255,255,255,.62),rgba(255,255,255,.28));
+  border:1px solid var(--g-edge);
+  box-shadow:var(--g-shadow),inset 0 1px 0 rgba(255,255,255,.85),inset 0 -1px 0 rgba(255,255,255,.2);
+}
+.eq-card,.stat-card{transition:transform .25s ease,box-shadow .25s ease}
+.eq-card:hover,.stat-card:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(31,95,64,.20),inset 0 1px 0 rgba(255,255,255,.9)}
+.eq-icon-box{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 4px 12px rgba(31,95,64,.10);
+  border:1px solid rgba(255,255,255,.6);
+}
+.prog-bg{background:rgba(255,255,255,.55);box-shadow:inset 0 1px 3px rgba(31,95,64,.12)}
+
+/* buttons & tabs */
+.btn-primary,.tab-on{
+  background:linear-gradient(135deg,rgba(47,133,90,.92),rgba(76,175,80,.85));
+  border:1px solid rgba(255,255,255,.45);
+  box-shadow:0 6px 16px rgba(47,133,90,.28),inset 0 1px 0 rgba(255,255,255,.45);
+}
+.btn-success{box-shadow:0 4px 12px rgba(47,133,90,.25),inset 0 1px 0 rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.35)}
+.btn-outline,.e-edit,.e-del,.tab-off{
+  background:rgba(255,255,255,.38);
+  border:1px solid rgba(255,255,255,.7);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+}
+.btn-outline:hover,.e-edit:hover,.tab-off:hover{background:rgba(255,255,255,.7)}
+.tabs{
+  width:fit-content;max-width:calc(100% - 56px);margin:0 28px 18px;padding:5px;gap:4px;
+  background:rgba(255,255,255,.35);border:1px solid var(--g-edge);border-radius:16px;
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  box-shadow:var(--g-shadow);
+}
+.fbar .tab{border:1px solid rgba(255,255,255,.6)}
+
+/* table */
+table{background:transparent}
+th{background:rgba(255,255,255,.45);backdrop-filter:blur(6px)}
+td{border-top:1px solid rgba(255,255,255,.65)}
+tr:nth-child(even) td{background:rgba(255,255,255,.22)}
+tbody tr{transition:background .15s}
+tbody tr:hover td{background:rgba(255,255,255,.55)}
+
+/* modal */
+.overlay{background:rgba(13,59,26,.30);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.modal{
+  background:linear-gradient(145deg,rgba(255,255,255,.78),rgba(255,255,255,.50));
+  border:1px solid rgba(255,255,255,.85);
+  box-shadow:0 24px 64px rgba(13,59,26,.28),inset 0 1px 0 rgba(255,255,255,.95);
+}
+.inp{
+  background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.8);
+  box-shadow:inset 0 1px 3px rgba(31,95,64,.10);
+}
+.inp:focus{background:rgba(255,255,255,.8);border-color:#2F855A;box-shadow:0 0 0 3px rgba(47,133,90,.20)}
+.info-box{background:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.7)}
+.code-blk{background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.75)}
+.ipick-btn,.nchip{background:rgba(255,255,255,.45);border-color:rgba(255,255,255,.8)}
+.ipick-btn.sel{background:rgba(232,245,233,.85);border-color:#2F855A}
+.nchip.sel{background:rgba(47,133,90,.92)}
+.nchip.busy{background:rgba(253,235,211,.75)}
+.dchip,.ntag{background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.8)}
+.dchip.busy{background:rgba(237,137,54,.92)}
+.badge-b,.badge-r{border:1px solid rgba(255,255,255,.6)}
+.toast{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.4)}
+.t-ok{background:rgba(47,133,90,.88)}
+.t-err{background:rgba(226,75,74,.88)}
+
+/* header logo (inline style) */
+.header-left>div:first-child{
+  box-shadow:0 6px 18px rgba(47,133,90,.35),inset 0 1px 0 rgba(255,255,255,.55);
+  border:1px solid rgba(255,255,255,.6);
+}
+
+/* fallback + accessibility */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .header,.stat-card,.card,.eq-card,.modal,.tabs{background:rgba(255,255,255,.92)}
+}
+:focus-visible{outline:2px solid #2F855A;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){
+  .eq-card,.stat-card,.btn,.tab{transition:none}
+  .eq-card{animation:none}
+}
+@media (max-width:600px){
+  .header{position:static}
+  .tabs{margin:0 16px 18px;max-width:calc(100% - 32px)}
+}
+
+/* ===== Glass motion ===== */
+:root{--ease:cubic-bezier(.22,.8,.24,1)}
+
+/* shared keyframes */
+@keyframes gFrost{from{opacity:0;transform:translateY(14px) scale(.985);-webkit-backdrop-filter:blur(0) saturate(100%);backdrop-filter:blur(0) saturate(100%)}to{opacity:1;transform:none}}
+@keyframes gPane{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes gOverlay{from{opacity:0;-webkit-backdrop-filter:blur(0);backdrop-filter:blur(0)}to{opacity:1;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}}
+@keyframes gModal{from{opacity:0;transform:translateY(18px) scale(.94);-webkit-backdrop-filter:blur(0);backdrop-filter:blur(0)}60%{opacity:1}to{transform:none}}
+@keyframes gToast{from{opacity:0;transform:translateX(40px) scale(.96);-webkit-backdrop-filter:blur(0);backdrop-filter:blur(0)}to{opacity:1;transform:none}}
+@keyframes gDrop{from{opacity:0;transform:translateY(-100%)}to{opacity:1;transform:none}}
+@keyframes gSheen{from{transform:translateX(-120%) skewX(-20deg)}to{transform:translateX(220%) skewX(-20deg)}}
+
+/* page load: header drops in, cards frost in with a short stagger */
+.header{animation:gDrop .7s var(--ease) both}
+.stat-card{animation:gFrost .6s var(--ease) both}
+.stat-card:nth-child(1){animation-delay:.10s}.stat-card:nth-child(2){animation-delay:.16s}
+.stat-card:nth-child(3){animation-delay:.22s}.stat-card:nth-child(4){animation-delay:.28s}
+.eq-card{animation:gFrost .6s var(--ease) both}
+.eq-card:nth-child(1){animation-delay:.18s}.eq-card:nth-child(2){animation-delay:.24s}
+.eq-card:nth-child(3){animation-delay:.30s}.eq-card:nth-child(4){animation-delay:.36s}
+.eq-card:nth-child(5){animation-delay:.42s}.eq-card:nth-child(6){animation-delay:.48s}
+.eq-card:nth-child(n+7){animation-delay:.54s}
+
+/* tab switch: new pane glides in (runs each time hidden is removed) */
+.content:not(.hidden){animation:gPane .45s var(--ease) both}
+
+/* modal: frosted backdrop fades in, glass panel rises and settles */
+.overlay.show{animation:gOverlay .3s ease both}
+.overlay.show .modal{animation:gModal .45s var(--ease) both}
+.toast.show{animation:gToast .45s var(--ease) both}
+
+/* glass sheen sweep on hover */
+.btn,.tab,.eq-card,.stat-card{position:relative;overflow:hidden}
+.btn::after,.tab::after,.eq-card::after,.stat-card::after{
+  content:"";position:absolute;inset:0 auto 0 0;width:45%;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:translateX(-120%) skewX(-20deg);opacity:0;
+}
+.btn:hover::after,.tab:hover::after,.eq-card:hover::after,.stat-card:hover::after{
+  opacity:1;animation:gSheen .9s var(--ease) both;
+}
+
+/* smoother, springier interactions */
+.btn,.tab,.e-edit,.e-del,.inp,.ipick-btn,.nchip,.cdot,.eq-card,.stat-card,tbody tr td{
+  transition:transform .35s var(--ease),background .3s ease,border-color .3s ease,box-shadow .35s ease,color .25s ease;
+}
+.btn:active,.tab:active,.nchip:active,.ipick-btn:active{transform:scale(.96)}
+.prog-fill{transition:width .9s var(--ease)}
+.eq-card:hover .eq-icon-box{transform:translateY(-2px) scale(1.05)}
+.eq-icon-box{transition:transform .35s var(--ease)}
+
+@media (prefers-reduced-motion:reduce){
+  .header,.stat-card,.eq-card,.content:not(.hidden),.overlay.show,.overlay.show .modal,.toast.show{animation:none}
+  .btn:hover::after,.tab:hover::after,.eq-card:hover::after,.stat-card:hover::after{animation:none;opacity:0}
+  .prog-fill,.eq-icon-box{transition:none}
+}
+/* ===== /Glass motion ===== */
+
+/* sync chip */
+.sync-chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font:inherit;font-size:12.5px;font-weight:600;color:#1F5F40;cursor:pointer;
+  background:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.75);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 2px 8px rgba(31,95,64,.10);transition:background .3s ease,transform .3s var(--ease)}
+.sync-chip:hover{background:rgba(255,255,255,.75)}
+.sync-chip:active{transform:scale(.96)}
+.sync-dot{width:9px;height:9px;border-radius:50%;background:#2F855A;box-shadow:0 0 0 3px rgba(47,133,90,.18);transition:background .3s ease,box-shadow .3s ease}
+.sync-chip[data-state="sync"] .sync-dot{background:#ED8936;box-shadow:0 0 0 3px rgba(237,137,54,.22);animation:gPulse 1.1s ease-in-out infinite}
+.sync-chip[data-state="offline"] .sync-dot{background:#E24B4A;box-shadow:0 0 0 3px rgba(226,75,74,.20)}
+.sync-chip[data-state="locked"] .sync-dot{background:#D69E2E;box-shadow:0 0 0 3px rgba(214,158,46,.22)}
+@keyframes gPulse{50%{transform:scale(1.35);opacity:.6}}
+@media (prefers-reduced-motion:reduce){.sync-chip[data-state="sync"] .sync-dot{animation:none}}
+/* ===== /Glass design layer ===== */
+</style>
+
+
+
+<div class="header">
+  <div class="header-left">
+    <div style="width:52px;height:52px;background:linear-gradient(135deg,#2F855A,#4CAF50);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="4" r="2.5"></circle>
+        <path d="M12 7v6M7 11h10M9 21l3-8 3 8"></path>
+        <circle cx="5" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle>
+        <line x1="5" y1="17" x2="5" y2="13"></line><line x1="19" y1="17" x2="19" y2="13"></line>
+      </svg>
+    </div>
+    <div>
+      <div style="font-weight:800;font-size:16px;color:#1F5F40;line-height:1.2">คลังอุปกรณ์ทางกายภาพบำบัด</div>
+      <div style="font-weight:700;font-size:13px;color:#2F855A;line-height:1.3">ระบบยืม-คืนอุปกรณ์ทางการแพทย์</div>
+      <div style="font-size:10px;color:#4CAF50;margin-top:1px">โรงพยาบาลท่าสองยาง · Thasongyang Hospital</div>
+    </div>
+  </div>
+  <div class="header-btns">
+      <button class="sync-chip" id="syncChip" data-state="sync" onclick="pull(true)" title="กดเพื่อซิงก์ใหม่"><span class="sync-dot"></span><span id="syncTxt">กำลังเชื่อมต่อ…</span></button>
+    <button class="btn btn-primary" onclick="openBorrow()">+ บันทึกการยืม</button>
+    <button class="btn btn-outline" onclick="openAdjust()">ปรับสต๊อก</button>
+    <button class="btn btn-outline" onclick="switchTab(&#39;eq&#39;)">จัดการอุปกรณ์</button>
+    <button class="btn btn-outline" onclick="exportData()">Export JSON</button>
+    <button class="btn btn-outline" onclick="exportXLSX()">Export Excel</button>
+    <button class="btn btn-outline" onclick="document.getElementById(&#39;impFile&#39;).click()">Import</button>
+    <input type="file" id="impFile" accept=".json" style="display:none" onchange="importData(event)">
+    <button class="btn btn-outline" onclick="openGS()">Google Script</button>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-card">
+    <div class="stat-icon" style="color:#4CAF50"><svg><use href="#i-box"></use></svg></div>
+    <div class="stat-val" id="st0" style="color:#2F855A">67</div>
+    <div class="stat-label">อุปกรณ์ทั้งหมด</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon" style="color:#1D9E75"><svg><use href="#i-check"></use></svg></div>
+    <div class="stat-val" id="st1" style="color:#0F6E56">67</div>
+    <div class="stat-label">คงเหลือรวม</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon" style="color:#EF9F27"><svg><use href="#i-loop"></use></svg></div>
+    <div class="stat-val" id="st2" style="color:#854F0B">0</div>
+    <div class="stat-label">กำลังยืม</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon" style="color:#7F77DD"><svg><use href="#i-doc"></use></svg></div>
+    <div class="stat-val" id="st3" style="color:#3C3489">3</div>
+    <div class="stat-label">รายการทั้งหมด</div>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab tab-on" id="t-dash" onclick="switchTab(&#39;dash&#39;)">ภาพรวม</button>
+  <button class="tab tab-off" id="t-rec" onclick="switchTab(&#39;rec&#39;)">รายการยืม-คืน</button>
+  <button class="tab tab-off" id="t-eq" onclick="switchTab(&#39;eq&#39;)">จัดการอุปกรณ์</button>
+</div>
+
+<div class="content" id="c-dash"><div class="eq-grid" id="eqGrid"><div class="eq-card"><div class="eq-hdr"><div><div class="eq-icon-box" style="background: rgba(74, 144, 217, 0.133);"><svg width="28" height="28" style="color: rgb(74, 144, 217); display: block; flex-shrink: 0;"><use href="#i-bed"></use></svg></div><div style="font-weight: 700; font-size: 15px; margin-top: 10px; color: rgb(13, 59, 26);">เตียงนอน</div></div><div style="text-align: right;"><div class="eq-num" style="color:#4A90D9">13</div><div class="eq-sub">คงเหลือ / 13</div></div></div><div class="prog-bg"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#4A90D980,#4A90D9)"></div></div><div class="eq-foot"><span>ยืมอยู่ 0 ชิ้น</span><span>100% คงเหลือ</span></div></div><div class="eq-card"><div class="eq-hdr"><div><div class="eq-icon-box" style="background: rgba(123, 104, 238, 0.133);"><svg width="28" height="28" style="color: rgb(123, 104, 238); display: block; flex-shrink: 0;"><use href="#i-wc"></use></svg></div><div style="font-weight: 700; font-size: 15px; margin-top: 10px; color: rgb(13, 59, 26);">รถเข็น</div></div><div style="text-align: right;"><div class="eq-num" style="color:#7B68EE">8</div><div class="eq-sub">คงเหลือ / 8</div></div></div><div class="prog-bg"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#7B68EE80,#7B68EE)"></div></div><div class="eq-foot"><span>ยืมอยู่ 0 ชิ้น</span><span>100% คงเหลือ</span></div></div><div class="eq-card"><div class="eq-hdr"><div><div class="eq-icon-box" style="background: rgba(72, 187, 120, 0.133);"><svg width="28" height="28" style="color: rgb(72, 187, 120); display: block; flex-shrink: 0;"><use href="#i-crutch"></use></svg></div><div style="font-weight: 700; font-size: 15px; margin-top: 10px; color: rgb(13, 59, 26);">ไม้ค้ำยัน</div></div><div style="text-align: right;"><div class="eq-num" style="color:#48BB78">12</div><div class="eq-sub">คงเหลือ / 12</div></div></div><div class="prog-bg"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#48BB7880,#48BB78)"></div></div><div class="eq-foot"><span>ยืมอยู่ 0 ชิ้น</span><span>100% คงเหลือ</span></div></div><div class="eq-card"><div class="eq-hdr"><div><div class="eq-icon-box" style="background: rgba(237, 137, 54, 0.133);"><svg width="28" height="28" style="color: rgb(237, 137, 54); display: block; flex-shrink: 0;"><use href="#i-w4"></use></svg></div><div style="font-weight: 700; font-size: 15px; margin-top: 10px; color: rgb(13, 59, 26);">ไม้เท้าฝึกเดิน 4 ขา</div></div><div style="text-align: right;"><div class="eq-num" style="color:#ED8936">6</div><div class="eq-sub">คงเหลือ / 6</div></div></div><div class="prog-bg"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#ED893680,#ED8936)"></div></div><div class="eq-foot"><span>ยืมอยู่ 0 ชิ้น</span><span>100% คงเหลือ</span></div></div><div class="eq-card"><div class="eq-hdr"><div><div class="eq-icon-box" style="background: rgba(245, 101, 101, 0.133);"><svg width="28" height="28" style="color: rgb(245, 101, 101); display: block; flex-shrink: 0;"><use href="#i-w3"></use></svg></div><div style="font-weight: 700; font-size: 15px; margin-top: 10px; color: rgb(13, 59, 26);">ไม้เท้าฝึกเดิน 3 ขา</div></div><div style="text-align: right;"><div class="eq-num" style="color:#F56565">4</div><div class="eq-sub">คงเหลือ / 4</div></div></div><div class="prog-bg"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#F5656580,#F56565)"></div></div><div class="eq-foot"><span>ยืมอยู่ 0 ชิ้น</span><span>100% คงเหลือ</span></div></div><div class="eq-card"><div class="eq-hdr"><div><div class="eq-icon-box" style="background: rgba(56, 178, 172, 0.133);"><svg width="28" height="28" style="color: rgb(56, 178, 172); display: block; flex-shrink: 0;"><use href="#i-c1"></use></svg></div><div style="font-weight: 700; font-size: 15px; margin-top: 10px; color: rgb(13, 59, 26);">ไม้เท้า 1 ขา</div></div><div style="text-align: right;"><div class="eq-num" style="color:#38B2AC">10</div><div class="eq-sub">คงเหลือ / 10</div></div></div><div class="prog-bg"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#38B2AC80,#38B2AC)"></div></div><div class="eq-foot"><span>ยืมอยู่ 0 ชิ้น</span><span>100% คงเหลือ</span></div></div><div class="eq-card"><div class="eq-hdr"><div><div class="eq-icon-box" style="background: rgba(232, 64, 106, 0.133);"><svg width="28" height="28" style="color: rgb(232, 64, 106); display: block; flex-shrink: 0;"><use href="#i-default"></use></svg></div><div style="font-weight: 700; font-size: 15px; margin-top: 10px; color: rgb(13, 59, 26);">เครื่องให้ออกซิเจน</div></div><div style="text-align: right;"><div class="eq-num" style="color:#E8406A">2</div><div class="eq-sub">คงเหลือ / 2</div></div></div><div class="prog-bg"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#E8406A80,#E8406A)"></div></div><div class="eq-foot"><span>ยืมอยู่ 0 ชิ้น</span><span>100% คงเหลือ</span></div></div><div class="eq-card"><div class="eq-hdr"><div><div class="eq-icon-box" style="background: rgba(47, 133, 90, 0.133);"><svg width="28" height="28" style="color: rgb(47, 133, 90); display: block; flex-shrink: 0;"><use href="#i-default"></use></svg></div><div style="font-weight: 700; font-size: 15px; margin-top: 10px; color: rgb(13, 59, 26);">Jewett brace size S</div></div><div style="text-align: right;"><div class="eq-num" style="color:#2F855A">10</div><div class="eq-sub">คงเหลือ / 10</div></div></div><div class="prog-bg"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#2F855A80,#2F855A)"></div></div><div class="eq-foot"><span>ยืมอยู่ 0 ชิ้น</span><span>100% คงเหลือ</span></div></div><div class="eq-card"><div class="eq-hdr"><div><div class="eq-icon-box" style="background: rgba(47, 133, 90, 0.133);"><svg width="28" height="28" style="color: rgb(47, 133, 90); display: block; flex-shrink: 0;"><use href="#i-bed"></use></svg></div><div style="font-weight: 700; font-size: 15px; margin-top: 10px; color: rgb(13, 59, 26);">Tailor Brace</div></div><div style="text-align: right;"><div class="eq-num" style="color:#2F855A">2</div><div class="eq-sub">คงเหลือ / 2</div></div></div><div class="prog-bg"><div class="prog-fill" style="width:100%;background:linear-gradient(90deg,#2F855A80,#2F855A)"></div></div><div class="eq-foot"><span>ยืมอยู่ 0 ชิ้น</span><span>100% คงเหลือ</span></div></div></div></div>
+
+<div class="content hidden" id="c-rec">
+  <div class="fbar">
+    <input class="inp" id="srch" placeholder="ค้นหาชื่อ, HN, อุปกรณ์, ผู้ให้ยืม..." oninput="renderTable()" style="max-width:260px">
+    <button class="tab tab-on" id="f-all" onclick="setF(&#39;all&#39;)">ทั้งหมด</button>
+    <button class="tab tab-off" id="f-b" onclick="setF(&#39;borrowed&#39;)">กำลังยืม</button>
+    <button class="tab tab-off" id="f-r" onclick="setF(&#39;returned&#39;)">คืนแล้ว</button>
+  </div>
+  <div class="card" style="overflow:hidden">
+    <table>
+      <thead><tr><th>อุปกรณ์</th><th>เบอร์</th><th>ชื่อผู้ยืม</th><th>HN/เลขที่</th><th>จำนวน</th><th>ผู้ให้ยืม</th><th>วันยืม</th><th>วันคืน</th><th>สถานะ</th><th></th></tr></thead>
+      <tbody id="recBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="content hidden" id="c-eq">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:10px">
+    <div style="font-size:13px;color:#2F855A">รายการอุปกรณ์ทั้งหมด</div>
+    <button class="btn btn-primary" onclick="openAddEq()">+ เพิ่มอุปกรณ์ใหม่</button>
+  </div>
+  <div class="card" style="overflow:hidden">
+    <table>
+      <thead><tr><th>ไอคอน</th><th>ชื่ออุปกรณ์</th><th>สี</th><th>คงเหลือ</th><th>กำลังยืม</th><th style="text-align:right">จัดการ</th></tr></thead>
+      <tbody id="eqBody"><tr><td><div style="width: 36px; height: 36px; background: rgba(74, 144, 217, 0.133); border-radius: 10px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" style="color: rgb(74, 144, 217); display: block; flex-shrink: 0;"><use href="#i-bed"></use></svg></div></td>
+      <td style="font-weight:600">เตียงนอน</td>
+      <td><span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#4A90D9;vertical-align:middle;margin-right:6px"></span><span style="font-size:11px;color:#2F855A">#4A90D9</span></td>
+      <td style="font-weight:700;color:#1D9E75">13</td>
+      <td style="color:#EF9F27">0</td>
+      <td style="text-align:right">
+        <button class="e-edit" onclick="openEditEq(&#39;bed&#39;)">แก้ไข</button>
+        <button class="e-del" onclick="openDelEq(&#39;bed&#39;)">ลบ</button>
+      </td></tr><tr><td><div style="width: 36px; height: 36px; background: rgba(123, 104, 238, 0.133); border-radius: 10px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" style="color: rgb(123, 104, 238); display: block; flex-shrink: 0;"><use href="#i-wc"></use></svg></div></td>
+      <td style="font-weight:600">รถเข็น</td>
+      <td><span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#7B68EE;vertical-align:middle;margin-right:6px"></span><span style="font-size:11px;color:#2F855A">#7B68EE</span></td>
+      <td style="font-weight:700;color:#1D9E75">8</td>
+      <td style="color:#EF9F27">0</td>
+      <td style="text-align:right">
+        <button class="e-edit" onclick="openEditEq(&#39;wc&#39;)">แก้ไข</button>
+        <button class="e-del" onclick="openDelEq(&#39;wc&#39;)">ลบ</button>
+      </td></tr><tr><td><div style="width: 36px; height: 36px; background: rgba(72, 187, 120, 0.133); border-radius: 10px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" style="color: rgb(72, 187, 120); display: block; flex-shrink: 0;"><use href="#i-crutch"></use></svg></div></td>
+      <td style="font-weight:600">ไม้ค้ำยัน</td>
+      <td><span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#48BB78;vertical-align:middle;margin-right:6px"></span><span style="font-size:11px;color:#2F855A">#48BB78</span></td>
+      <td style="font-weight:700;color:#1D9E75">12</td>
+      <td style="color:#EF9F27">0</td>
+      <td style="text-align:right">
+        <button class="e-edit" onclick="openEditEq(&#39;crutch&#39;)">แก้ไข</button>
+        <button class="e-del" onclick="openDelEq(&#39;crutch&#39;)">ลบ</button>
+      </td></tr><tr><td><div style="width: 36px; height: 36px; background: rgba(237, 137, 54, 0.133); border-radius: 10px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" style="color: rgb(237, 137, 54); display: block; flex-shrink: 0;"><use href="#i-w4"></use></svg></div></td>
+      <td style="font-weight:600">ไม้เท้าฝึกเดิน 4 ขา</td>
+      <td><span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#ED8936;vertical-align:middle;margin-right:6px"></span><span style="font-size:11px;color:#2F855A">#ED8936</span></td>
+      <td style="font-weight:700;color:#1D9E75">6</td>
+      <td style="color:#EF9F27">0</td>
+      <td style="text-align:right">
+        <button class="e-edit" onclick="openEditEq(&#39;w4&#39;)">แก้ไข</button>
+        <button class="e-del" onclick="openDelEq(&#39;w4&#39;)">ลบ</button>
+      </td></tr><tr><td><div style="width: 36px; height: 36px; background: rgba(245, 101, 101, 0.133); border-radius: 10px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" style="color: rgb(245, 101, 101); display: block; flex-shrink: 0;"><use href="#i-w3"></use></svg></div></td>
+      <td style="font-weight:600">ไม้เท้าฝึกเดิน 3 ขา</td>
+      <td><span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#F56565;vertical-align:middle;margin-right:6px"></span><span style="font-size:11px;color:#2F855A">#F56565</span></td>
+      <td style="font-weight:700;color:#1D9E75">4</td>
+      <td style="color:#EF9F27">0</td>
+      <td style="text-align:right">
+        <button class="e-edit" onclick="openEditEq(&#39;w3&#39;)">แก้ไข</button>
+        <button class="e-del" onclick="openDelEq(&#39;w3&#39;)">ลบ</button>
+      </td></tr><tr><td><div style="width: 36px; height: 36px; background: rgba(56, 178, 172, 0.133); border-radius: 10px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" style="color: rgb(56, 178, 172); display: block; flex-shrink: 0;"><use href="#i-c1"></use></svg></div></td>
+      <td style="font-weight:600">ไม้เท้า 1 ขา</td>
+      <td><span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#38B2AC;vertical-align:middle;margin-right:6px"></span><span style="font-size:11px;color:#2F855A">#38B2AC</span></td>
+      <td style="font-weight:700;color:#1D9E75">10</td>
+      <td style="color:#EF9F27">0</td>
+      <td style="text-align:right">
+        <button class="e-edit" onclick="openEditEq(&#39;c1&#39;)">แก้ไข</button>
+        <button class="e-del" onclick="openDelEq(&#39;c1&#39;)">ลบ</button>
+      </td></tr><tr><td><div style="width: 36px; height: 36px; background: rgba(232, 64, 106, 0.133); border-radius: 10px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" style="color: rgb(232, 64, 106); display: block; flex-shrink: 0;"><use href="#i-default"></use></svg></div></td>
+      <td style="font-weight:600">เครื่องให้ออกซิเจน</td>
+      <td><span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#E8406A;vertical-align:middle;margin-right:6px"></span><span style="font-size:11px;color:#2F855A">#E8406A</span></td>
+      <td style="font-weight:700;color:#EF9F27">2</td>
+      <td style="color:#EF9F27">0</td>
+      <td style="text-align:right">
+        <button class="e-edit" onclick="openEditEq(&#39;eq_1777537749102&#39;)">แก้ไข</button>
+        <button class="e-del" onclick="openDelEq(&#39;eq_1777537749102&#39;)">ลบ</button>
+      </td></tr><tr><td><div style="width: 36px; height: 36px; background: rgba(47, 133, 90, 0.133); border-radius: 10px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" style="color: rgb(47, 133, 90); display: block; flex-shrink: 0;"><use href="#i-default"></use></svg></div></td>
+      <td style="font-weight:600">Jewett brace size S</td>
+      <td><span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#2F855A;vertical-align:middle;margin-right:6px"></span><span style="font-size:11px;color:#2F855A">#2F855A</span></td>
+      <td style="font-weight:700;color:#1D9E75">10</td>
+      <td style="color:#EF9F27">0</td>
+      <td style="text-align:right">
+        <button class="e-edit" onclick="openEditEq(&#39;eq_1777538810663&#39;)">แก้ไข</button>
+        <button class="e-del" onclick="openDelEq(&#39;eq_1777538810663&#39;)">ลบ</button>
+      </td></tr><tr><td><div style="width: 36px; height: 36px; background: rgba(47, 133, 90, 0.133); border-radius: 10px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" style="color: rgb(47, 133, 90); display: block; flex-shrink: 0;"><use href="#i-bed"></use></svg></div></td>
+      <td style="font-weight:600">Tailor Brace</td>
+      <td><span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:#2F855A;vertical-align:middle;margin-right:6px"></span><span style="font-size:11px;color:#2F855A">#2F855A</span></td>
+      <td style="font-weight:700;color:#EF9F27">2</td>
+      <td style="color:#EF9F27">0</td>
+      <td style="text-align:right">
+        <button class="e-edit" onclick="openEditEq(&#39;eq_1777538868552&#39;)">แก้ไข</button>
+        <button class="e-del" onclick="openDelEq(&#39;eq_1777538868552&#39;)">ลบ</button>
+      </td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="overlay" id="m-borrow">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h2>บันทึกการยืมอุปกรณ์</h2>
+    <div class="fgrp"><label>อุปกรณ์ *</label><select class="inp" id="b-eq" onchange="bQtyReset()"></select></div>
+    <div class="fgrp"><label>ผู้ให้ยืม *</label><select class="inp" id="b-lender" onchange="lenderChg('b')"></select><input class="inp" id="b-lender-new" placeholder="พิมพ์ชื่อผู้ให้ยืม" style="margin-top:8px;display:none"></div>
+    <div class="fgrp"><label>ชื่อผู้ยืม *</label><input class="inp" id="b-name" placeholder="ชื่อ-นามสกุล"></div>
+    <div class="fgrp"><label>HN / เลขที่ *</label><input class="inp" id="b-hn" placeholder="เลขที่ผู้ป่วย"></div>
+    <div class="fgrp"><label>เลือกเบอร์อุปกรณ์ * (สีส้ม = ถูกยืมอยู่)</label><div class="numgrid" id="b-nums"></div><div class="hint" id="b-stock-i"></div></div>
+    <div class="fgrp"><label>หมายเหตุ</label><input class="inp" id="b-note" placeholder="หมายเหตุ (ถ้ามี)"></div>
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeM(&#39;m-borrow&#39;)">ยกเลิก</button>
+      <button class="btn btn-primary" onclick="doBorrow()">บันทึกการยืม</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="m-edrec">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h2>แก้ไขรายการยืม-คืน</h2>
+    <div class="info-box"><div class="info-lbl">อุปกรณ์</div><div class="info-val" id="e-eq" style="margin-bottom:0"></div></div>
+    <div class="fgrp"><label>ผู้ให้ยืม *</label><select class="inp" id="e-lender" onchange="lenderChg('e')"></select><input class="inp" id="e-lender-new" placeholder="พิมพ์ชื่อผู้ให้ยืม" style="margin-top:8px;display:none"></div>
+    <div class="fgrp"><label>ชื่อผู้ยืม *</label><input class="inp" id="e-name"></div>
+    <div class="fgrp"><label>HN / เลขที่ *</label><input class="inp" id="e-hn"></div>
+    <div class="fgrp" id="e-pick-grp"><label>เบอร์อุปกรณ์ (สีส้ม = ถูกยืมโดยรายการอื่น)</label><div class="numgrid" id="e-nums"></div><div class="hint" id="e-stock-i"></div></div>
+    <div class="fgrp hidden" id="e-nums-ro"><label>เบอร์อุปกรณ์</label><div id="e-nums-ro-v" style="font-size:13px;font-weight:600"></div></div>
+    <div class="fgrp"><label>วัน-เวลาที่ยืม</label><input class="inp" type="datetime-local" id="e-bdate"></div>
+    <div class="fgrp hidden" id="e-rdate-grp"><label>วัน-เวลาที่คืน</label><input class="inp" type="datetime-local" id="e-rdate"></div>
+    <div class="fgrp"><label>หมายเหตุ</label><input class="inp" id="e-note" placeholder="หมายเหตุ (ถ้ามี)"></div>
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeM('m-edrec')">ยกเลิก</button>
+      <button class="btn btn-primary" onclick="doEditRec()">บันทึกการแก้ไข</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="m-return">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h2>บันทึกการคืนอุปกรณ์</h2>
+    <div class="info-box" id="ret-info"></div>
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeM(&#39;m-return&#39;)">ยกเลิก</button>
+      <button class="btn btn-success" style="padding:9px 18px;font-size:13px" onclick="doReturn()">ยืนยันการคืน</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="m-adj">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h2>ปรับจำนวนอุปกรณ์</h2>
+    <div class="fgrp"><label>อุปกรณ์</label><select class="inp" id="adj-eq" onchange="adjPrev()"></select></div>
+    <div class="fgrp"><label>เพิ่ม (+) / ลด (−) จำนวน</label><input class="inp" type="number" id="adj-d" placeholder="เช่น 5 หรือ -2" oninput="adjPrev()"></div>
+    <div class="info-box"><div class="info-lbl">ผลลัพธ์</div><div id="adj-prev" style="font-size:18px;font-weight:700;color:#1D9E75">—</div></div>
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeM(&#39;m-adj&#39;)">ยกเลิก</button>
+      <button class="btn btn-primary" onclick="doAdj()">บันทึก</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="m-eq">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h2 id="eq-title">เพิ่มอุปกรณ์ใหม่</h2>
+    <div class="fgrp"><label>ชื่ออุปกรณ์ *</label><input class="inp" id="eq-name" placeholder="เช่น รถเข็นผู้ป่วย"></div>
+    <div class="fgrp"><label>ไอคอน *</label><div class="ipick-grid" id="ipick"></div></div>
+    <div class="fgrp"><label>สีประจำอุปกรณ์</label><div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center" id="cpick"></div></div>
+    <div class="fgrp" id="init-grp"><label>จำนวนเริ่มต้น</label><input class="inp" type="number" id="eq-init" placeholder="0" min="0" style="max-width:110px"></div>
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeM(&#39;m-eq&#39;)">ยกเลิก</button>
+      <button class="btn btn-primary" id="eq-btn" onclick="doEq()">เพิ่มอุปกรณ์</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="m-del">
+  <div class="modal" style="width:400px" onclick="event.stopPropagation()">
+    <h2>ยืนยันการลบ</h2>
+    <div class="info-box">
+      <div class="info-lbl">อุปกรณ์ที่จะลบ</div>
+      <div class="info-val" id="del-name">—</div>
+      <div style="font-size:12px;color:#E24B4A;margin-top:4px">ประวัติการยืม-คืนจะยังคงอยู่ แต่ไม่สามารถยืมเพิ่มได้</div>
+    </div>
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeM(&#39;m-del&#39;)">ยกเลิก</button>
+      <button class="btn" style="background:linear-gradient(135deg,#E24B4A,#A32D2D);color:#fff;padding:9px 18px" onclick="doDel()">ลบอุปกรณ์</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="m-gs">
+  <div class="modal" style="width:600px" onclick="event.stopPropagation()">
+    <h2>Google Apps Script</h2>
+    <p style="font-size:12px;color:#2F855A;margin-bottom:12px">คัดลอกโค้ดนี้ไปใส่ใน Google Apps Script</p>
+    <div class="code-blk" id="gs-code"></div>
+    <div id="gs-steps" style="margin-top:10px"></div>
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeM(&#39;m-gs&#39;)">ปิด</button>
+      <button class="btn btn-primary" onclick="copyGS()">คัดลอกโค้ด</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="m-pass">
+  <div class="modal" style="width:380px" onclick="event.stopPropagation()">
+    <h2>เข้าสู่ระบบคลังอุปกรณ์</h2>
+    <div class="fgrp">
+      <label>รหัสผ่านของหน่วยงาน</label>
+      <input class="inp" id="pass-inp" type="password" autocomplete="current-password" onkeydown="if(event.key==='Enter')submitPass()">
+      <div id="pass-err" style="color:#E24B4A;font-size:12px;margin-top:6px;min-height:16px"></div>
+    </div>
+    <div class="mfoot">
+      <button class="btn btn-primary" onclick="submitPass()">เข้าใช้งาน</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const BASE_EQ = [
+  {id:"bed",    name:"เตียงนอน",           icon:"bed",    color:"#2F855A"},
+  {id:"wc",     name:"รถเข็น",              icon:"wc",     color:"#4CAF50"},
+  {id:"crutch", name:"ไม้ค้ำยัน",           icon:"crutch", color:"#1F5F40"},
+  {id:"w4",     name:"ไม้เท้าฝึกเดิน 4 ขา", icon:"w4",     color:"#5DCAA5"},
+  {id:"w3",     name:"ไม้เท้าฝึกเดิน 3 ขา", icon:"w3",     color:"#7F77DD"},
+  {id:"c1",     name:"ไม้เท้า 1 ขา",        icon:"c1",     color:"#D85A30"},
+];
+const BASE_STOCK = {bed:5,wc:8,crutch:12,w4:6,w3:4,c1:10};
+const ICONS  = ["bed","wc","crutch","w4","w3","c1","default"];
+const ILABEL = {bed:"เตียง",wc:"รถเข็น",crutch:"ไม้ค้ำ",w4:"4 ขา",w3:"3 ขา",c1:"1 ขา",default:"ทั่วไป"};
+const COLORS = ["#2F855A","#4CAF50","#1F5F40","#81C784","#1D9E75","#5DCAA5","#7F77DD","#EF9F27","#D85A30","#E24B4A"];
+
+let eqs  = JSON.parse(localStorage.getItem("eq2_eq")  || JSON.stringify(BASE_EQ));
+let stk  = JSON.parse(localStorage.getItem("eq2_stk") || JSON.stringify(BASE_STOCK));
+let recs = JSON.parse(localStorage.getItem("eq2_rec") || "[]");
+eqs.forEach(e => { if (stk[e.id] === undefined) stk[e.id] = 0; });
+
+const LENDERS=["นางสาวกรกนก พรมอินชัย","นางสาวกัลญาณี พรมเพียร","นางสาวพรรณนิภา ไพโรจน์","นางสาวทิฑัมพร คีรีพิทักษ์","นางสาวดาวละออ แสงดาวกลางไพร","นายธนัช อโนคุณ","นายวสันต์ แก้วจตุพร"];
+let customLenders = JSON.parse(localStorage.getItem("eq2_lenders") || "[]");
+const H=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let pick={eqId:null,sel:[],exclude:null,max:0,box:"",info:""};
+
+let flt="all", retId=null, editId=null, delId=null, selColor=COLORS[0], selIcon=ICONS[0], bQty=1;
+
+function cacheLocal(){
+  localStorage.setItem("eq2_eq",  JSON.stringify(eqs));
+  localStorage.setItem("eq2_stk", JSON.stringify(stk));
+  localStorage.setItem("eq2_rec", JSON.stringify(recs));
+  localStorage.setItem("eq2_lenders", JSON.stringify(customLenders));
+}
+function save(){cacheLocal();queuePush();}
+function gEq(id){return eqs.find(e=>e.id===id);}
+function fmt(d){
+  if(!d) return "-";
+  const dt=new Date(d);
+  return dt.toLocaleDateString("th-TH",{day:"2-digit",month:"2-digit",year:"2-digit"})
+       +" "+dt.toLocaleTimeString("th-TH",{hour:"2-digit",minute:"2-digit"});
+}
+
+function mkSvg(iconKey, color, size){
+  const NS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(NS,"svg");
+  svg.setAttribute("width",  size);
+  svg.setAttribute("height", size);
+  svg.style.color = color || "currentColor";
+  svg.style.display = "block";
+  svg.style.flexShrink = "0";
+  const use = document.createElementNS(NS,"use");
+  use.setAttribute("href","#i-"+(ICONS.includes(iconKey)?iconKey:"default"));
+  svg.appendChild(use);
+  return svg;
+}
+
+function toast(msg, type){
+  const el=document.getElementById("toast");
+  el.textContent=msg;
+  el.className="toast show t-"+(type||"ok");
+  setTimeout(()=>el.className="toast",3000);
+}
+function closeM(id){document.getElementById(id).classList.remove("show");}
+function openM(id) {document.getElementById(id).classList.add("show");}
+
+function renderStats(){
+  const avail=Object.values(stk).reduce((a,b)=>a+b,0);
+  const borr=recs.filter(r=>r.status==="borrowed").reduce((s,r)=>s+r.qty,0);
+  document.getElementById("st0").textContent=avail+borr;
+  document.getElementById("st1").textContent=avail;
+  document.getElementById("st2").textContent=borr;
+  document.getElementById("st3").textContent=recs.length;
+}
+
+function renderGrid(){
+  const active=recs.filter(r=>r.status==="borrowed");
+  const grid=document.getElementById("eqGrid");
+  grid.innerHTML="";
+  eqs.forEach(eq=>{
+    const borr=active.filter(r=>r.status==="borrowed" && r.equipId===eq.id).reduce((s,r)=>s+r.qty,0);
+    const av=stk[eq.id]||0, tot=av+borr;
+    const pct=tot>0?Math.round(av/tot*100):0;
+
+    const card=document.createElement("div");
+    card.className="eq-card";
+
+    const ibox=document.createElement("div");
+    ibox.className="eq-icon-box";
+    ibox.style.background=eq.color+"22";
+    ibox.appendChild(mkSvg(eq.icon,eq.color,28));
+
+    const nm=document.createElement("div");
+    nm.style.cssText="font-weight:700;font-size:15px;margin-top:10px;color:#0D3B1A";
+    nm.textContent=eq.name;
+
+    const left=document.createElement("div");
+    left.appendChild(ibox); left.appendChild(nm);
+
+    const right=document.createElement("div");
+    right.style.textAlign="right";
+    right.innerHTML=`<div class="eq-num" style="color:${eq.color}">${av}</div><div class="eq-sub">คงเหลือ / ${tot}</div>`;
+
+    const hdr=document.createElement("div");
+    hdr.className="eq-hdr";
+    hdr.appendChild(left); hdr.appendChild(right);
+    card.appendChild(hdr);
+
+    const prog=document.createElement("div");
+    prog.className="prog-bg";
+    prog.innerHTML=`<div class="prog-fill" style="width:${pct}%;background:linear-gradient(90deg,${eq.color}80,${eq.color})"></div>`;
+    card.appendChild(prog);
+
+    const foot=document.createElement("div");
+    foot.className="eq-foot";
+    foot.innerHTML=`<span>ยืมอยู่ ${borr} ชิ้น</span><span>${pct}% คงเหลือ</span>`;
+    card.appendChild(foot);
+
+    const bm=busyMap(eq.id,null), ch=document.createElement("div");
+    ch.style.marginTop="10px";
+    for(let n=1;n<=tot;n++){
+      const c=document.createElement("span");c.className="dchip"+(bm[n]?" busy":"");
+      c.textContent=n;c.title=bm[n]?`เบอร์ ${n}: ${bm[n].patientName}`:`เบอร์ ${n}: ว่าง`;ch.appendChild(c);
+    }
+    const known=Object.keys(bm).length, unk=borr-known;
+    if(unk>0){const u=document.createElement("div");u.className="hint";u.textContent=`ยืมอยู่ ${unk} ชิ้น (รายการเก่า ไม่ระบุเบอร์)`;ch.appendChild(u);}
+    card.appendChild(ch);
+
+    if(av===0){const w=document.createElement("div");w.className="warn-tag";w.style.color="#E24B4A";w.textContent="อุปกรณ์หมด";card.appendChild(w);}
+    else if(av<=1){const w=document.createElement("div");w.className="warn-tag";w.style.color="#EF9F27";w.textContent="เหลือน้อย";card.appendChild(w);}
+
+    grid.appendChild(card);
+  });
+}
+
+function numsTxt(r){return r.nums&&r.nums.length?r.nums.map(n=>`<span class="ntag">#${n}</span>`).join(""):"-";}
+function renderTable(){
+  const q=(document.getElementById("srch").value||"").toLowerCase();
+  const rows=recs.filter(r=>{
+    if(flt!=="all" && r.status!==flt) return false;
+    if(q&&![r.patientName,r.patientId,r.equipName,r.lender,(r.nums||[]).join(" ")].some(s=>s&&String(s).toLowerCase().includes(q))) return false;
+    return true;
+  });
+  const tb=document.getElementById("recBody");
+  tb.innerHTML="";
+  if(!rows.length){tb.innerHTML=`<tr><td colspan="10" style="text-align:center;padding:36px;color:#2F855A">ไม่พบรายการ</td></tr>`;return;}
+  rows.forEach(r=>{
+    const eq=gEq(r.equipId);
+    const tr=document.createElement("tr");
+    tr.innerHTML=`
+      <td><div class="irow">${mkSvg(r.equipIcon||eq?.icon,eq?.color||"#4CAF50",18).outerHTML}<span>${H(r.equipName)}</span></div></td>
+      <td>${numsTxt(r)}</td>
+      <td style="font-weight:600">${H(r.patientName)}</td>
+      <td style="color:#2F855A;font-family:monospace">${H(r.patientId)}</td>
+      <td style="font-weight:700;color:#4CAF50">${r.qty}</td>
+      <td style="font-size:12px">${H(r.lender||"-")}</td>
+      <td style="color:#2F855A;font-size:11px">${fmt(r.borrowDate)}</td>
+      <td style="color:#2F855A;font-size:11px">${fmt(r.returnDate)}</td>
+      <td><span class="badge ${r.status==="borrowed"?"badge-b":"badge-r"}">${r.status==="borrowed"?"กำลังยืม":"คืนแล้ว"}</span></td>
+      <td style="white-space:nowrap"><button class="e-edit" onclick="openEditRec('${r.id}')">แก้ไข</button> ${r.status==="borrowed"?`<button class="btn btn-success btn-sm" onclick="openRet('${r.id}')">บันทึกคืน</button>`:""}</td>`;
+    tb.appendChild(tr);
+  });
+}
+
+function renderEqTable(){
+  const active=recs.filter(r=>r.status==="borrowed");
+  const tb=document.getElementById("eqBody");
+  tb.innerHTML="";
+  if(!eqs.length){tb.innerHTML=`<tr><td colspan="6" style="text-align:center;padding:36px;color:#2F855A">ยังไม่มีอุปกรณ์</td></tr>`;return;}
+  eqs.forEach(eq=>{
+    const borr=active.filter(r=>r.equipId===eq.id).reduce((s,r)=>s+r.qty,0);
+    const av=stk[eq.id]||0;
+    const tr=document.createElement("tr");
+
+    const tdI=document.createElement("td");
+    const ibox=document.createElement("div");
+    ibox.style.cssText=`width:36px;height:36px;background:${eq.color}22;border-radius:10px;display:flex;align-items:center;justify-content:center`;
+    ibox.appendChild(mkSvg(eq.icon,eq.color,22));
+    tdI.appendChild(ibox);
+    tr.appendChild(tdI);
+
+    tr.innerHTML+=`
+      <td style="font-weight:600">${eq.name}</td>
+      <td><span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:${eq.color};vertical-align:middle;margin-right:6px"></span><span style="font-size:11px;color:#2F855A">${eq.color}</span></td>
+      <td style="font-weight:700;color:${av===0?"#E24B4A":av<=2?"#EF9F27":"#1D9E75"}">${av}</td>
+      <td style="color:#EF9F27">${borr||"0"}</td>
+      <td style="text-align:right">
+        <button class="e-edit" onclick="openEditEq('${eq.id}')">แก้ไข</button>
+        <button class="e-del" onclick="openDelEq('${eq.id}')">ลบ</button>
+      </td>`;
+    tb.appendChild(tr);
+  });
+}
+
+function renderAll(){renderStats();renderGrid();renderTable();renderEqTable();}
+
+function switchTab(t){
+  ["dash","rec","eq"].forEach(x=>{
+    document.getElementById("c-"+x).classList.toggle("hidden",t!==x);
+    document.getElementById("t-"+x).className="tab "+(t===x?"tab-on":"tab-off");
+  });
+  if(t==="eq") renderEqTable();
+}
+
+function setF(f){
+  flt=f;
+  document.getElementById("f-all").className="tab "+(f==="all"?"tab-on":"tab-off");
+  document.getElementById("f-b").className  ="tab "+(f==="borrowed"?"tab-on":"tab-off");
+  document.getElementById("f-r").className  ="tab "+(f==="returned"?"tab-on":"tab-off");
+  renderTable();
+}
+
+function allLenders(){return LENDERS.concat(customLenders.filter(n=>!LENDERS.includes(n)));}
+function fillLender(p,val){
+  const sel=document.getElementById(p+"-lender"), list=allLenders();
+  if(val&&!list.includes(val)) list.push(val);
+  sel.innerHTML=`<option value="">-- เลือกผู้ให้ยืม --</option>`+list.map((n,i)=>`<option value="${H(n)}">${i+1}. ${H(n)}</option>`).join("")+`<option value="__new__">${list.length+1}. เพิ่มชื่อด้วยการพิมพ์...</option>`;
+  sel.value=val||"";
+  const t=document.getElementById(p+"-lender-new");t.value="";t.style.display="none";
+}
+function lenderChg(p){
+  const t=document.getElementById(p+"-lender-new");
+  const on=document.getElementById(p+"-lender").value==="__new__";
+  t.style.display=on?"block":"none";if(on)t.focus();
+}
+function getLender(p){
+  const v=document.getElementById(p+"-lender").value;
+  if(v==="__new__"){
+    const n=document.getElementById(p+"-lender-new").value.trim();
+    if(n&&!allLenders().includes(n)) customLenders.push(n);
+    return n;
+  }
+  return v;
+}
+function totalOf(id){return (stk[id]||0)+recs.filter(r=>r.status==="borrowed"&&r.equipId===id).reduce((s,r)=>s+r.qty,0);}
+function busyMap(id,exclude){
+  const m={};
+  recs.filter(r=>r.status==="borrowed"&&r.equipId===id&&r.id!==exclude).forEach(r=>(r.nums||[]).forEach(n=>m[n]=r));
+  return m;
+}
+function startPick(boxId,infoId,eqId,sel,exclude,max){
+  pick={eqId,sel:sel.slice(),exclude,max,box:boxId,info:infoId};
+  renderPick();
+}
+function renderPick(){
+  const box=document.getElementById(pick.box);box.innerHTML="";
+  const bm=busyMap(pick.eqId,pick.exclude), tot=totalOf(pick.eqId);
+  if(!tot) box.innerHTML='<span class="hint">ไม่มีอุปกรณ์ชนิดนี้ในสต๊อก</span>';
+  for(let n=1;n<=tot;n++){
+    const b=document.createElement("button");b.type="button";b.textContent=n;
+    const busy=bm[n], on=pick.sel.includes(n);
+    b.className="nchip"+(busy?" busy":on?" sel":"");
+    if(busy) b.title="ถูกยืมโดย "+busy.patientName;
+    b.onclick=()=>{
+      if(busy) return toast(`เบอร์ ${n} ถูกยืมโดย ${busy.patientName}`,"err");
+      if(on) pick.sel=pick.sel.filter(x=>x!==n);
+      else{
+        if(pick.sel.length>=pick.max) return toast(`เลือกได้สูงสุด ${pick.max} ชิ้น`,"err");
+        pick.sel.push(n);
+      }
+      renderPick();
+    };
+    box.appendChild(b);
+  }
+  document.getElementById(pick.info).textContent=`เลือกแล้ว ${pick.sel.length} ชิ้น · เบอร์ที่เลือก: ${pick.sel.length?pick.sel.slice().sort((a,b)=>a-b).join(", "):"-"} · ให้ยืมได้สูงสุด ${pick.max} ชิ้น`;
+}
+
+function openBorrow(){
+  const sel=document.getElementById("b-eq");
+  sel.innerHTML=eqs.map(e=>`<option value="${e.id}">${H(e.name)} (คงเหลือ: ${stk[e.id]||0})</option>`).join("");
+  ["b-name","b-hn","b-note"].forEach(i=>document.getElementById(i).value="");
+  fillLender("b","");
+  bQtyReset();
+  openM("m-borrow");
+}
+function bQtyReset(){
+  const id=document.getElementById("b-eq").value;
+  startPick("b-nums","b-stock-i",id,[],null,stk[id]||0);
+}
+function doBorrow(){
+  const name=document.getElementById("b-name").value.trim();
+  const hn  =document.getElementById("b-hn").value.trim();
+  const eqId=document.getElementById("b-eq").value;
+  const lender=getLender("b");
+  if(!lender) return toast("กรุณาเลือกหรือพิมพ์ชื่อผู้ให้ยืม","err");
+  if(!name||!hn) return toast("กรุณากรอกชื่อและ HN/เลขที่","err");
+  const nums=pick.sel.slice().sort((a,b)=>a-b);
+  if(!nums.length) return toast("กรุณาเลือกเบอร์อุปกรณ์อย่างน้อย 1 ชิ้น","err");
+  if((stk[eqId]||0)<nums.length) return toast("อุปกรณ์ไม่เพียงพอ","err");
+  const eq=gEq(eqId);
+  const rec={id:Date.now().toString(),equipId:eqId,equipName:eq.name,equipIcon:eq.icon,
+    patientName:name,patientId:hn,qty:nums.length,nums,lender,note:document.getElementById("b-note").value.trim(),
+    borrowDate:new Date().toISOString(),returnDate:null,status:"borrowed"};
+  recs.unshift(rec);
+  stk[eqId]-=nums.length;
+  save();renderAll();closeM("m-borrow");
+  toast(`บันทึกการยืม "${eq.name}" เบอร์ ${nums.join(", ")} สำเร็จ`);
+  syncGS("borrow",rec);
+}
+
+function toLocalInput(iso){
+  if(!iso) return "";
+  const d=new Date(iso), p=n=>String(n).padStart(2,"0");
+  return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+let edRecId=null;
+function openEditRec(id){
+  edRecId=id;
+  const r=recs.find(x=>x.id===id), eq=gEq(r.equipId);
+  document.getElementById("e-eq").textContent=`${r.equipName} × ${r.qty} ชิ้น`;
+  document.getElementById("e-name").value=r.patientName||"";
+  document.getElementById("e-hn").value=r.patientId||"";
+  document.getElementById("e-note").value=r.note||"";
+  document.getElementById("e-bdate").value=toLocalInput(r.borrowDate);
+  fillLender("e",r.lender||"");
+  const borrowed=r.status==="borrowed";
+  document.getElementById("e-rdate-grp").classList.toggle("hidden",borrowed);
+  document.getElementById("e-rdate").value=toLocalInput(r.returnDate);
+  document.getElementById("e-pick-grp").classList.toggle("hidden",!borrowed);
+  document.getElementById("e-nums-ro").classList.toggle("hidden",borrowed);
+  if(borrowed){
+    startPick("e-nums","e-stock-i",r.equipId,r.nums||[],r.id,(stk[r.equipId]||0)+r.qty);
+    if(!(r.nums&&r.nums.length)) document.getElementById("e-stock-i").textContent+=` · รายการเก่าไม่มีเบอร์ (${r.qty} ชิ้น) เลือกเบอร์เพื่อกำหนด หรือเว้นว่างเพื่อคงเดิม`;
+  } else document.getElementById("e-nums-ro-v").innerHTML=numsTxt(r);
+  openM("m-edrec");
+}
+function doEditRec(){
+  const r=recs.find(x=>x.id===edRecId);
+  const name=document.getElementById("e-name").value.trim();
+  const hn=document.getElementById("e-hn").value.trim();
+  const lender=getLender("e");
+  if(!lender) return toast("กรุณาเลือกหรือพิมพ์ชื่อผู้ให้ยืม","err");
+  if(!name||!hn) return toast("กรุณากรอกชื่อและ HN/เลขที่","err");
+  const bv=document.getElementById("e-bdate").value;
+  if(!bv) return toast("กรุณาระบุวันที่ยืม","err");
+  const bd=new Date(bv).toISOString();
+  let rd=r.returnDate;
+  if(r.status==="returned"){
+    const rv=document.getElementById("e-rdate").value;
+    if(!rv) return toast("กรุณาระบุวันที่คืน","err");
+    rd=new Date(rv).toISOString();
+    if(rd<bd) return toast("วันที่คืนต้องไม่ก่อนวันที่ยืม","err");
+  } else {
+    const sel=pick.sel.slice().sort((a,b)=>a-b);
+    if(sel.length){
+      const delta=sel.length-r.qty;
+      if(delta>(stk[r.equipId]||0)) return toast("อุปกรณ์ไม่เพียงพอ","err");
+      stk[r.equipId]-=delta;r.qty=sel.length;r.nums=sel;
+    } else if(r.nums&&r.nums.length) return toast("กรุณาเลือกเบอร์อย่างน้อย 1 ชิ้น","err");
+  }
+  r.patientName=name;r.patientId=hn;r.lender=lender;r.note=document.getElementById("e-note").value.trim();
+  r.borrowDate=bd;r.returnDate=rd;
+  save();renderAll();closeM("m-edrec");toast("แก้ไขรายการสำเร็จ");
+  syncGS("edit",r);
+}
+
+function openRet(id){
+  retId=id;
+  const r=recs.find(x=>x.id===id), eq=gEq(r.equipId);
+  const box=document.getElementById("ret-info");
+  box.innerHTML="";
+
+  const lbl1=document.createElement("div");lbl1.className="info-lbl";lbl1.textContent="ผู้ยืม";
+  box.appendChild(lbl1);
+  const v1=document.createElement("div");v1.className="info-val";
+  v1.innerHTML=`${r.patientName} <span style="color:#2F855A;font-size:12px">(${r.patientId})</span>`;
+  box.appendChild(v1);
+
+  const lbl2=document.createElement("div");lbl2.className="info-lbl";lbl2.textContent="อุปกรณ์";
+  box.appendChild(lbl2);
+  const v2=document.createElement("div");v2.className="irow";v2.style.fontWeight="600";v2.style.fontSize="14px";
+  v2.appendChild(mkSvg(r.equipIcon||eq?.icon,eq?.color||"#4CAF50",18));
+  const sp=document.createElement("span");sp.textContent=`${r.equipName} × ${r.qty} ชิ้น`+(r.nums&&r.nums.length?` (เบอร์ ${r.nums.join(", ")})`:"");
+  v2.appendChild(sp);
+  box.appendChild(v2);
+
+  const dt=document.createElement("div");dt.style.cssText="margin-top:6px;font-size:11px;color:#2F855A";
+  dt.textContent=`วันที่ยืม: ${fmt(r.borrowDate)}`;
+  box.appendChild(dt);
+
+  openM("m-return");
+}
+function doReturn(){
+  const r=recs.find(x=>x.id===retId);
+  r.status="returned";r.returnDate=new Date().toISOString();
+  stk[r.equipId]=(stk[r.equipId]||0)+r.qty;
+  save();renderAll();closeM("m-return");toast("บันทึกการคืนสำเร็จ");
+  syncGS("return",r);
+}
+
+function openAdjust(){
+  const s=document.getElementById("adj-eq");
+  s.innerHTML=eqs.map(e=>`<option value="${e.id}">${e.name} (คงเหลือ: ${stk[e.id]||0})</option>`).join("");
+  document.getElementById("adj-d").value="";
+  document.getElementById("adj-prev").textContent="—";
+  openM("m-adj");
+}
+function adjPrev(){
+  const id=document.getElementById("adj-eq").value;
+  const d=parseInt(document.getElementById("adj-d").value)||0;
+  const res=(stk[id]||0)+d;
+  document.getElementById("adj-prev").textContent=`${stk[id]||0} → ${Math.max(0,res)} ชิ้น`;
+  document.getElementById("adj-prev").style.color=res<0?"#E24B4A":"#1D9E75";
+}
+function doAdj(){
+  const id=document.getElementById("adj-eq").value;
+  const d=parseInt(document.getElementById("adj-d").value)||0;
+  if((stk[id]||0)+d<0) return toast("จำนวนคงเหลือไม่สามารถติดลบได้","err");
+  stk[id]=(stk[id]||0)+d;
+  save();renderAll();closeM("m-adj");toast(`ปรับสต๊อก "${gEq(id).name}" แล้ว`);
+}
+
+function buildIPick(sel){
+  const grid=document.getElementById("ipick");
+  grid.innerHTML="";
+  ICONS.forEach(key=>{
+    const btn=document.createElement("button");
+    btn.type="button";
+    btn.className="ipick-btn"+(key===sel?" sel":"");
+    btn.onclick=()=>{selIcon=key;buildIPick(key);};
+    btn.appendChild(mkSvg(key,key===sel?selColor:"#81C784",24));
+    const lbl=document.createElement("div");lbl.className="ipick-lbl";lbl.textContent=ILABEL[key]||key;
+    btn.appendChild(lbl);
+    grid.appendChild(btn);
+  });
+}
+function buildCPick(sel){
+  const wrap=document.getElementById("cpick");
+  wrap.innerHTML="";
+  COLORS.forEach(c=>{
+    const d=document.createElement("div");
+    d.className="cdot"+(c===sel?" sel":"");
+    d.style.background=c; d.title=c;
+    d.onclick=()=>{selColor=c;buildCPick(c);buildIPick(selIcon);};
+    wrap.appendChild(d);
+  });
+  const cp=document.createElement("input");
+  cp.type="color";cp.value=sel;cp.className="inp";
+  cp.style.cssText="width:38px;height:32px;padding:2px 3px;cursor:pointer;flex-shrink:0";
+  cp.oninput=()=>{selColor=cp.value;buildCPick(cp.value);};
+  wrap.appendChild(cp);
+}
+function openAddEq(){
+  editId=null;selColor=COLORS[0];selIcon=ICONS[0];
+  document.getElementById("eq-title").textContent="เพิ่มอุปกรณ์ใหม่";
+  document.getElementById("eq-btn").textContent="เพิ่มอุปกรณ์";
+  document.getElementById("eq-name").value="";
+  document.getElementById("eq-init").value="0";
+  document.getElementById("init-grp").style.display="block";
+  buildIPick(selIcon);buildCPick(selColor);openM("m-eq");
+}
+function openEditEq(id){
+  editId=id;const eq=gEq(id);
+  selColor=eq.color;selIcon=eq.icon||ICONS[0];
+  document.getElementById("eq-title").textContent="แก้ไขอุปกรณ์";
+  document.getElementById("eq-btn").textContent="บันทึกการแก้ไข";
+  document.getElementById("eq-name").value=eq.name;
+  document.getElementById("init-grp").style.display="none";
+  buildIPick(selIcon);buildCPick(selColor);openM("m-eq");
+}
+function doEq(){
+  const name=document.getElementById("eq-name").value.trim();
+  if(!name) return toast("กรุณากรอกชื่ออุปกรณ์","err");
+  if(editId){
+    const eq=gEq(editId);
+    eq.name=name;eq.icon=selIcon;eq.color=selColor;
+    recs.forEach(r=>{if(r.equipId===editId){r.equipName=name;r.equipIcon=selIcon;}});
+    save();renderAll();closeM("m-eq");toast(`แก้ไข "${name}" สำเร็จ`);
+  } else {
+    const init=Math.max(0,parseInt(document.getElementById("eq-init").value)||0);
+    const newId="eq_"+Date.now();
+    eqs.push({id:newId,name,icon:selIcon,color:selColor});
+    stk[newId]=init;
+    save();renderAll();closeM("m-eq");toast(`เพิ่ม "${name}" สำเร็จ`);
+  }
+}
+function openDelEq(id){
+  delId=id;const eq=gEq(id);
+  const cell=document.getElementById("del-name");cell.innerHTML="";
+  const wrap=document.createElement("span");
+  wrap.className="irow";
+  wrap.appendChild(mkSvg(eq.icon,eq.color,20));
+  const sp=document.createElement("span");sp.textContent=eq.name;
+  wrap.appendChild(sp);cell.appendChild(wrap);
+  openM("m-del");
+}
+function doDel(){
+  if(recs.some(r=>r.equipId===delId&&r.status==="borrowed")){closeM("m-del");return toast("มีอุปกรณ์ถูกยืมอยู่ ลบไม่ได้","err");}
+  const eq=gEq(delId);
+  eqs=eqs.filter(e=>e.id!==delId);delete stk[delId];
+  save();renderAll();closeM("m-del");toast(`ลบ "${eq.name}" แล้ว`);
+}
+
+function exportData(){
+  const blob=new Blob([JSON.stringify({v:3,at:new Date().toISOString(),eqs,stk,recs,lenders:customLenders},null,2)],{type:"application/json"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="equipment_"+new Date().toLocaleDateString("th-TH").replace(/\//g,"-")+".json";
+  a.click();toast("Export JSON สำเร็จ");
+}
+function crc32(b){
+  if(!crc32.t){crc32.t=[];for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;crc32.t[n]=c>>>0;}}
+  let c=0xFFFFFFFF;for(let i=0;i<b.length;i++)c=crc32.t[(c^b[i])&255]^(c>>>8);return (c^0xFFFFFFFF)>>>0;
+}
+function buildXlsx(rows){
+  const enc=new TextEncoder();
+  const col=i=>String.fromCharCode(65+i);
+  const x=v=>String(v).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  const widths=[8,22,14,26,14,8,32,18,18,12,26];
+  let sd=rows.map((row,ri)=>`<row r="${ri+1}">`+row.map((v,ci)=>{
+    const ref=col(ci)+(ri+1);
+    if(typeof v==="number") return `<c r="${ref}"><v>${v}</v></c>`;
+    return `<c r="${ref}" t="inlineStr"${ri===0?' s="1"':''}><is><t xml:space="preserve">${x(v)}</t></is></c>`;
+  }).join("")+`</row>`).join("");
+  const sheet=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols>${widths.map((w,i)=>`<col min="${i+1}" max="${i+1}" width="${w}" customWidth="1"/>`).join("")}</cols><sheetData>${sd}</sheetData></worksheet>`;
+  const files=[
+    ["[Content_Types].xml",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>`],
+    ["_rels/.rels",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`],
+    ["xl/workbook.xml",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="รายการยืม-คืน" sheetId="1" r:id="rId1"/></sheets></workbook>`],
+    ["xl/_rels/workbook.xml.rels",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`],
+    ["xl/styles.xml",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Tahoma"/></font><font><b/><sz val="11"/><name val="Tahoma"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FFE8F5E9"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="2"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1"/></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`],
+    ["xl/worksheets/sheet1.xml",sheet]
+  ];
+  const parts=[],cd=[];let off=0;
+  const u16=n=>[n&255,(n>>>8)&255], u32=n=>[n&255,(n>>>8)&255,(n>>>16)&255,(n>>>24)&255];
+  files.forEach(([name,txt])=>{
+    const nb=enc.encode(name), db=enc.encode(txt), crc=crc32(db);
+    const lh=new Uint8Array([0x50,0x4b,3,4,...u16(20),...u16(0x0800),...u16(0),...u16(0),...u16(0x21),...u32(crc),...u32(db.length),...u32(db.length),...u16(nb.length),...u16(0)]);
+    parts.push(lh,nb,db);
+    cd.push(new Uint8Array([0x50,0x4b,1,2,...u16(20),...u16(20),...u16(0x0800),...u16(0),...u16(0),...u16(0x21),...u32(crc),...u32(db.length),...u32(db.length),...u16(nb.length),...u16(0),...u16(0),...u16(0),...u16(0),...u32(0),...u32(off)]),nb);
+    off+=lh.length+nb.length+db.length;
+  });
+  const cdSize=cd.reduce((s,a)=>s+a.length,0);
+  const end=new Uint8Array([0x50,0x4b,5,6,...u16(0),...u16(0),...u16(files.length),...u16(files.length),...u32(cdSize),...u32(off),...u16(0)]);
+  return new Blob([...parts,...cd,end],{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
+}
+function exportXLSX(){
+  const headers=["ลำดับ","อุปกรณ์","เบอร์","ชื่อผู้ยืม","HN/เลขที่","จำนวน","ผู้ให้ยืม","วันที่ยืม","วันที่คืน","สถานะ","หมายเหตุ"];
+  const rows=recs.map((r,i)=>[i+1,r.equipName||"",(r.nums||[]).join(", "),r.patientName||"",String(r.patientId||""),Number(r.qty)||0,r.lender||"",fmt(r.borrowDate),fmt(r.returnDate),r.status==="borrowed"?"กำลังยืม":"คืนแล้ว",r.note||""]);
+  const blob=buildXlsx([headers,...rows]);
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="borrow_records_"+new Date().toLocaleDateString("th-TH").replace(/\//g,"-")+".xlsx";
+  a.click();toast("Export Excel สำเร็จ ("+recs.length+" รายการ)");
+}
+function importData(e){
+  const file=e.target.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    try{
+      const d=JSON.parse(ev.target.result);
+      eqs =d.eqs||d.equipments;
+      stk =d.stk||d.stock;
+      recs=d.recs||d.records;
+      if(!eqs||!stk||!recs) throw new Error("ไฟล์ไม่ถูกต้อง");
+      if(Array.isArray(d.lenders)) customLenders=d.lenders;
+      save();renderAll();toast(`Import สำเร็จ: ${recs.length} รายการ`);
+    }catch(err){toast("ไฟล์ผิดพลาด: "+err.message,"err");}
+  };
+  reader.readAsText(file);
+  e.target.value="";
+}
+
+const GS_CODE=`// Google Apps Script — คลังอุปกรณ์ทางกายภาพบำบัด ระบบยืม-คืนอุปกรณ์
+// 1. สร้าง Google Sheet ใหม่
+// 2. Extensions > Apps Script > วางโค้ดนี้ > Save
+// 3. Deploy > New Deployment > Web App
+// 4. Execute as: Me | Who has access: Anyone
+// 5. Copy URL ใส่ใน GS_URL ในไฟล์ HTML
+
+const RECORDS_SHEET="BorrowRecords", STOCK_SHEET="Stock";
+function doPost(e){
+  try{
+    const d=JSON.parse(e.postData.contents);
+    if(d.action==="borrow") return saveBorrow(d);
+    if(d.action==="return") return saveReturn(d);
+    if(d.action==="edit") return saveEdit(d);
+    if(d.action==="adjustStock") return adjStock(d);
+  }catch(err){return json({error:err.message});}
+}
+function doGet(e){
+  const a=e.parameter.action;
+  if(a==="getRecords") return json(sheet(RECORDS_SHEET).getDataRange().getValues());
+  if(a==="getStock")   return json(sheet(STOCK_SHEET).getDataRange().getValues());
+  return ContentService.createTextOutput("OK");
+}
+function sheet(name){const ss=SpreadsheetApp.getActiveSpreadsheet();return ss.getSheetByName(name)||ss.insertSheet(name);}
+function json(d){return ContentService.createTextOutput(JSON.stringify(d)).setMimeType(ContentService.MimeType.JSON);}
+function saveBorrow(d){
+  const sh=sheet(RECORDS_SHEET);
+  if(sh.getLastRow()===0) sh.appendRow(["ID","อุปกรณ์","ชื่อผู้ยืม","HN/เลขที่","จำนวน","วันยืม","วันคืน","สถานะ","หมายเหตุ","เบอร์","ผู้ให้ยืม"]);
+  sh.appendRow([d.id,d.equipName,d.patientName,d.patientId,d.qty,new Date(d.borrowDate),"","ยืม",d.note||"",(d.nums||[]).join(", "),d.lender||""]);
+  updStock(d.equipId,-d.qty);return json({success:true});
+}
+function saveReturn(d){
+  const sh=sheet(RECORDS_SHEET),rows=sh.getDataRange().getValues();
+  for(let i=1;i<rows.length;i++){if(rows[i][0]===d.id){sh.getRange(i+1,7).setValue(new Date(d.returnDate));sh.getRange(i+1,8).setValue("คืนแล้ว");break;}}
+  updStock(d.equipId,d.qty);return json({success:true});
+}
+function saveEdit(d){
+  const sh=sheet(RECORDS_SHEET),rows=sh.getDataRange().getValues();
+  for(let i=1;i<rows.length;i++){if(rows[i][0]===d.id){
+    sh.getRange(i+1,3,1,3).setValues([[d.patientName,d.patientId,d.qty]]);
+    sh.getRange(i+1,6).setValue(new Date(d.borrowDate));
+    if(d.returnDate) sh.getRange(i+1,7).setValue(new Date(d.returnDate));
+    sh.getRange(i+1,9,1,3).setValues([[d.note||"",(d.nums||[]).join(", "),d.lender||""]]);break;}}
+  return json({success:true});
+}
+function updStock(id,delta){
+  const sh=sheet(STOCK_SHEET);
+  if(sh.getLastRow()===0) sh.appendRow(["ID","จำนวนคงเหลือ"]);
+  const rows=sh.getDataRange().getValues();
+  for(let i=1;i<rows.length;i++){if(rows[i][0]===id){sh.getRange(i+1,2).setValue(rows[i][1]+delta);return;}}
+  sh.appendRow([id,Math.max(0,delta)]);
+}
+function adjStock(d){updStock(d.equipId,d.delta);return json({success:true});}`;
+
+function openGS(){
+  document.getElementById("gs-code").textContent=GS_CODE;
+  document.getElementById("gs-steps").innerHTML=
+    ["1. สร้าง Google Sheet ใหม่","2. Extensions > Apps Script","3. วางโค้ดแล้ว Save","4. Deploy > New Deployment > Web App","5. Execute as: Me | Who has access: Anyone","6. Copy URL ใส่ในตัวแปร GS_URL"]
+    .map(s=>`<div class="step">${s}</div>`).join("");
+  openM("m-gs");
+}
+function copyGS(){navigator.clipboard.writeText(GS_CODE).then(()=>toast("คัดลอกโค้ดแล้ว"));}
+
+const GS_URL="";
+function syncGS(action,data){
+  if(!GS_URL) return;
+  fetch(GS_URL,{method:"POST",body:JSON.stringify({action,...data}),headers:{"Content-Type":"application/json"}})
+    .catch(err=>console.warn("sync failed:",err));
+}
+
+/* ===== Central DB: Netlify Function (/api/data) -> GitHub ===== */
+const API_URL="/api/data", POLL_MS=20000;
+let remoteSha=localStorage.getItem("eq2_sha")||null;
+let dirty=localStorage.getItem("eq2_dirty")==="1";
+let pushing=false,pushTimer=null,lastSync=null;
+let accessCode=localStorage.getItem("eq2_code")||"";
+
+function snapshot(){return {eqs,stk,recs,lenders:customLenders};}
+function setSha(s){remoteSha=s||null;s?localStorage.setItem("eq2_sha",s):localStorage.removeItem("eq2_sha");}
+function setDirty(v){dirty=v;v?localStorage.setItem("eq2_dirty","1"):localStorage.removeItem("eq2_dirty");}
+function applySnapshot(d){
+  if(!d||!Array.isArray(d.eqs)||!d.stk||!Array.isArray(d.recs))return false;
+  eqs=d.eqs;stk=d.stk;recs=d.recs;customLenders=Array.isArray(d.lenders)?d.lenders:[];
+  eqs.forEach(e=>{if(stk[e.id]===undefined)stk[e.id]=0;});
+  cacheLocal();renderAll();return true;
+}
+const SYNC_ERR={server_not_configured:"ยังตั้งค่าเซิร์ฟเวอร์ไม่ครบ",repo_not_accessible:"เข้าถึง GitHub repo ไม่ได้",github_error:"GitHub ตอบกลับผิดพลาด",db_corrupt:"ไฟล์ข้อมูลบน GitHub เสียหาย"};
+function setSync(state,msg){
+  const chip=document.getElementById("syncChip"),txt=document.getElementById("syncTxt");
+  if(!chip)return;
+  if(state==="ok")lastSync=new Date();
+  chip.dataset.state=state;
+  txt.textContent={ok:"ซิงก์แล้ว",sync:"กำลังซิงก์…",offline:dirty?"ออฟไลน์ · รอส่งข้อมูล":"เชื่อมต่อไม่ได้",locked:"ใส่รหัสผ่าน"}[state]||"";
+  chip.title=(msg?(SYNC_ERR[msg]||msg)+" · ":"")+(lastSync?"ซิงก์ล่าสุด "+lastSync.toLocaleTimeString("th-TH",{hour:"2-digit",minute:"2-digit"}):"กดเพื่อซิงก์ใหม่");
+}
+async function api(method,body){
+  const res=await fetch(API_URL,{method,cache:"no-store",headers:{"Content-Type":"application/json","x-access-code":accessCode},body:body?JSON.stringify(body):undefined});
+  let json={};try{json=await res.json();}catch(_){}
+  return {status:res.status,json};
+}
+const modalOpen=()=>!!document.querySelector(".overlay.show");
+
+async function pull(manual){
+  if(pushing||dirty)return;                      // ไม่ทับข้อมูลที่ยังไม่ได้ส่ง
+  if(!manual&&modalOpen())return;                // ไม่รีเฟรชกลางหน้าต่างกรอกข้อมูล
+  setSync("sync");
+  try{
+    const r=await api("GET");
+    if(r.status===401){askPass();return;}
+    if(r.status!==200)throw new Error(r.json.error||("HTTP "+r.status));
+    if(r.json.data===null||r.json.data===undefined){setDirty(true);await push();return;}   // ยังไม่มีไฟล์: อัปโหลดข้อมูลเริ่มต้น
+    if(r.json.sha!==remoteSha){setSha(r.json.sha);applySnapshot(r.json.data);}
+    setSync("ok");
+  }catch(err){setSync("offline",err.message);}
+}
+function queuePush(){setDirty(true);setSync("sync");clearTimeout(pushTimer);pushTimer=setTimeout(push,600);}
+async function push(){
+  if(pushing||!dirty)return;
+  pushing=true;setDirty(false);let failed=false;
+  try{
+    const r=await api("PUT",{data:snapshot(),sha:remoteSha});
+    if(r.status===200){setSha(r.json.sha);setSync("ok");}
+    else if(r.status===409){
+      if(r.json.data){setSha(r.json.sha);applySnapshot(r.json.data);}
+      setDirty(false);setSync("ok");
+      toast("มีผู้อื่นบันทึกข้อมูลก่อนหน้า โหลดข้อมูลล่าสุดแล้ว กรุณาทำรายการซ้ำ","err");
+    }else if(r.status===401){setDirty(true);failed=true;askPass();}
+    else throw new Error(r.json.error||("HTTP "+r.status));
+  }catch(err){setDirty(true);failed=true;setSync("offline",err.message);}
+  finally{
+    pushing=false;
+    if(dirty&&!document.getElementById("m-pass").classList.contains("show")){clearTimeout(pushTimer);pushTimer=setTimeout(push,failed?15000:300);}
+  }
+}
+function askPass(){
+  setSync("locked");
+  document.getElementById("pass-err").textContent=accessCode?"รหัสผ่านไม่ถูกต้อง":"";
+  if(!document.getElementById("m-pass").classList.contains("show")){
+    openM("m-pass");setTimeout(()=>document.getElementById("pass-inp").focus(),60);
+  }
+}
+async function submitPass(){
+  const inp=document.getElementById("pass-inp"),v=inp.value.trim();
+  if(!v)return;
+  accessCode=v;localStorage.setItem("eq2_code",v);inp.value="";
+  closeM("m-pass");
+  dirty?await push():await pull(true);
+}
+function initSync(){
+  setSync("sync");
+  dirty?push():pull(true);
+  setInterval(()=>pull(false),POLL_MS);
+  document.addEventListener("visibilitychange",()=>{if(!document.hidden)pull(false);});
+  window.addEventListener("online",()=>{dirty?push():pull(true);});
+  window.addEventListener("offline",()=>setSync("offline"));
+}
+/* ===== /Central DB ===== */
+
+renderAll();initSync();
+</script>
+
+</body></html>
