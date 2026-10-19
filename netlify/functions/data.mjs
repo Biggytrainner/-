@@ -31,13 +31,22 @@ const json = (body, status = 200, extra = {}) =>
 
 function readConfig() {
   const e = process.env;
+  const t = (v) => (v || "").trim(); // กันช่องว่าง/ขึ้นบรรทัดใหม่ที่ติดมาตอนวางค่า
+  let owner = t(e.GITHUB_OWNER);
+  let repo = t(e.GITHUB_REPO);
+  if (repo.includes("/")) { // เผื่อใส่ "owner/repo" ในช่อง GITHUB_REPO
+    const [o, r] = repo.split("/");
+    owner = owner || o;
+    repo = r;
+  }
+  repo = repo.replace(/\.git$/, "");
   const c = {
-    token: e.GITHUB_TOKEN,
-    owner: e.GITHUB_OWNER,
-    repo: e.GITHUB_REPO,
-    branch: e.GITHUB_BRANCH || "main",
-    path: e.GITHUB_PATH || "data/db.json",
-    code: e.ACCESS_CODE,
+    token: t(e.GITHUB_TOKEN),
+    owner,
+    repo,
+    branch: t(e.GITHUB_BRANCH) || "main",
+    path: t(e.GITHUB_PATH) || "data/db.json",
+    code: t(e.ACCESS_CODE || e.APP_PASSCODE),
   };
   c.ok = Boolean(c.token && c.owner && c.repo && c.code);
   return c;

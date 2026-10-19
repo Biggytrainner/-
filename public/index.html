@@ -374,6 +374,12 @@ tbody tr:hover td{background:rgba(255,255,255,.55)}
 .sync-chip[data-state="locked"] .sync-dot{background:#D69E2E;box-shadow:0 0 0 3px rgba(214,158,46,.22)}
 @keyframes gPulse{50%{transform:scale(1.35);opacity:.6}}
 @media (prefers-reduced-motion:reduce){.sync-chip[data-state="sync"] .sync-dot{animation:none}}
+
+.sync-banner{display:none;align-items:center;justify-content:space-between;gap:14px;margin:0 28px 14px;padding:11px 16px;border-radius:14px;font-size:13px;line-height:1.5;color:#7A4B00;
+  background:rgba(255,244,214,.62);border:1px solid rgba(214,158,46,.4);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 6px 20px rgba(214,158,46,.14),inset 0 1px 0 rgba(255,255,255,.7)}
+.sync-banner.show{display:flex;animation:gPane .35s var(--ease) both}
+.sync-banner .btn{flex:none;padding:6px 14px}
+@media (max-width:600px){.sync-banner{margin:0 16px 14px;flex-direction:column;align-items:stretch}}
 /* ===== /Glass design layer ===== */
 </style>
 
@@ -431,6 +437,7 @@ tbody tr:hover td{background:rgba(255,255,255,.55)}
   </div>
 </div>
 
+<div class="sync-banner" id="syncBanner" role="alert"><span id="syncMsg"></span><button class="btn btn-outline" onclick="retrySync()">ลองใหม่</button></div>
 <div class="tabs">
   <button class="tab tab-on" id="t-dash" onclick="switchTab(&#39;dash&#39;)">ภาพรวม</button>
   <button class="tab tab-off" id="t-rec" onclick="switchTab(&#39;rec&#39;)">รายการยืม-คืน</button>
@@ -1302,20 +1309,38 @@ function applySnapshot(d){
   eqs.forEach(e=>{if(stk[e.id]===undefined)stk[e.id]=0;});
   cacheLocal();renderAll();return true;
 }
-const SYNC_ERR={server_not_configured:"ยังตั้งค่าเซิร์ฟเวอร์ไม่ครบ",repo_not_accessible:"เข้าถึง GitHub repo ไม่ได้",github_error:"GitHub ตอบกลับผิดพลาด",db_corrupt:"ไฟล์ข้อมูลบน GitHub เสียหาย"};
 function setSync(state,msg){
   const chip=document.getElementById("syncChip"),txt=document.getElementById("syncTxt");
   if(!chip)return;
   if(state==="ok")lastSync=new Date();
   chip.dataset.state=state;
   txt.textContent={ok:"ซิงก์แล้ว",sync:"กำลังซิงก์…",offline:dirty?"ออฟไลน์ · รอส่งข้อมูล":"เชื่อมต่อไม่ได้",locked:"ใส่รหัสผ่าน"}[state]||"";
-  chip.title=(msg?(SYNC_ERR[msg]||msg)+" · ":"")+(lastSync?"ซิงก์ล่าสุด "+lastSync.toLocaleTimeString("th-TH",{hour:"2-digit",minute:"2-digit"}):"กดเพื่อซิงก์ใหม่");
+  chip.title=(msg?msg+" · ":"")+(lastSync?"ซิงก์ล่าสุด "+lastSync.toLocaleTimeString("th-TH",{hour:"2-digit",minute:"2-digit"}):"กดเพื่อซิงก์ใหม่");
+  const ban=document.getElementById("syncBanner");
+  if(state==="offline"){
+    ban.classList.add("show");
+    document.getElementById("syncMsg").textContent=(msg||"เชื่อมต่อเซิร์ฟเวอร์ไม่ได้")+(dirty?" — ข้อมูลที่แก้ไขเก็บไว้ในเครื่องแล้ว จะส่งให้อัตโนมัติเมื่อเชื่อมต่อได้":"");
+  }else if(state==="ok"||state==="locked")ban.classList.remove("show");
 }
 async function api(method,body){
-  const res=await fetch(API_URL,{method,cache:"no-store",headers:{"Content-Type":"application/json","x-access-code":accessCode},body:body?JSON.stringify(body):undefined});
-  let json={};try{json=await res.json();}catch(_){}
-  return {status:res.status,json};
+  try{
+    const res=await fetch(API_URL,{method,cache:"no-store",headers:{"Content-Type":"application/json","x-access-code":accessCode},body:body?JSON.stringify(body):undefined});
+    let json={};try{json=await res.json();}catch(_){}
+    return {status:res.status,json};
+  }catch(_){return {status:0,json:{}};}
 }
+function reasonOf(r){
+  const e=r.json.error,m=r.json.message||"";
+  if(r.status===0)return "ติดต่อเซิร์ฟเวอร์ไม่ได้ (เช็กอินเทอร์เน็ต — ถ้าเปิดไฟล์จากเครื่องจะไม่มี /api)";
+  if(e==="server_not_configured")return "ตั้ง Environment variables ที่ Netlify ไม่ครบ (GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO, ACCESS_CODE) แล้วต้อง Deploy ใหม่";
+  if(e==="repo_not_accessible"||/GitHub 404|Not Found/i.test(m))return "หา repo ข้อมูลใน GitHub ไม่เจอ — เช็กชื่อ GITHUB_OWNER/GITHUB_REPO และว่า token เลือก repo นี้แล้ว";
+  if(/GitHub 401|Bad credentials/i.test(m))return "GitHub token ไม่ถูกต้องหรือหมดอายุ";
+  if(/GitHub 403|not accessible|Forbidden/i.test(m))return "GitHub token ไม่มีสิทธิ์ Contents: Read and write บน repo ข้อมูล";
+  if(e==="db_corrupt")return "ไฟล์ data/db.json บน GitHub เสียหาย";
+  if(r.status===404)return "ไม่พบ /api/data — ฟังก์ชันยังไม่ถูก deploy (ต้อง deploy ผ่าน Git หรือ Netlify CLI ไม่ใช่ลากโฟลเดอร์วาง)";
+  return (e||("HTTP "+r.status))+(m?": "+m:"");
+}
+function retrySync(){dirty?push():pull(true);}
 const modalOpen=()=>!!document.querySelector(".overlay.show");
 
 async function pull(manual){
@@ -1325,7 +1350,7 @@ async function pull(manual){
   try{
     const r=await api("GET");
     if(r.status===401){askPass();return;}
-    if(r.status!==200)throw new Error(r.json.error||("HTTP "+r.status));
+    if(r.status!==200)throw new Error(reasonOf(r));
     if(r.json.data===null||r.json.data===undefined){setDirty(true);await push();return;}   // ยังไม่มีไฟล์: อัปโหลดข้อมูลเริ่มต้น
     if(r.json.sha!==remoteSha){setSha(r.json.sha);applySnapshot(r.json.data);}
     setSync("ok");
@@ -1343,7 +1368,7 @@ async function push(){
       setDirty(false);setSync("ok");
       toast("มีผู้อื่นบันทึกข้อมูลก่อนหน้า โหลดข้อมูลล่าสุดแล้ว กรุณาทำรายการซ้ำ","err");
     }else if(r.status===401){setDirty(true);failed=true;askPass();}
-    else throw new Error(r.json.error||("HTTP "+r.status));
+    else throw new Error(reasonOf(r));
   }catch(err){setDirty(true);failed=true;setSync("offline",err.message);}
   finally{
     pushing=false;
